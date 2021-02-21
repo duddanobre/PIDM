@@ -3,9 +3,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, FlatList, Text } from 'react-native'
 
-import Card from './card/Card'
+
 import CardItem from './card/CardItem'
-import MyButton from './MyButton'
 
 export default class MusicList extends Component {
 
