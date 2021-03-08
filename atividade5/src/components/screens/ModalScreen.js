@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import {Text, StyleSheet } from 'react-native'
 
 import MyButton from '../MyButton';
 import Card from '../card/Card';
@@ -10,19 +10,19 @@ export default class ModalScreen extends Component {
     render() {
         return (
             <Card>
-                <CardItem>
-                    <Text style={{fontSize:30}}>
+                <CardItem style={styles.header}>
+                    <Text style={styles.texto}>
                         {this.props.route.params.albumName}
                     </Text>  
-                    <Text style={{fontSize:30}}>
+                    <Text style={styles.texto}>
                         Lista de Músicas
                     </Text>     
                 </CardItem>
-                <CardItem>
+                <CardItem style={styles.lista}>
                     <MusicList  albumTracks={this.props.route.params.albumTracks} />
                 </CardItem>
-                <CardItem>
-                    <MyButton
+                <CardItem style={styles.header}>
+                    <MyButton 
                         onPress={() => this.props.navigation.goBack()}
                     >
                         Voltar
@@ -32,3 +32,23 @@ export default class ModalScreen extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    header: {
+        backgroundColor: '#6959CD',
+    },
+    texto:{
+        fontSize: 30,
+        color: '#ffffff',
+        fontWeight: 500
+    },
+    lista:{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f5f5f5',
+
+    }
+
+})

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image} from 'react-native'
 
 import Card from './card/Card'
 import CardItem from './card/CardItem'
@@ -13,7 +13,7 @@ export default class AlbumDetail extends Component {
 
     render() {
         return (
-            <Card >
+            <Card>
                 <CardItem>
                     <View style={{ marginLeft: 10, marginRight: 10 }}>
                         <Image style={{ width: 50, height: 50 }}
